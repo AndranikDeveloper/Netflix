@@ -1,0 +1,92 @@
+.authentication {
+  background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-ae88-c201ae0267e2/50239067-07bc-4df7-9e48-8d66d4e3f39c/AM-en-20231030-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-block {
+  border: 1px solid transparent;
+  width: 450px;
+  height: 670px;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 30px;
+}
+.auth-container {
+  width: 314px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 50px;
+}
+
+#filled-input {
+  border: 1px solid transparent;
+  padding: 15px;
+  width: 100%;
+  border-radius: 3px;
+  background-color: #333333;
+  color: white;
+}
+
+#filled-input:focus {
+  outline: none;
+}
+.sign-text {
+  color: white;
+  font-size: 28px;
+}
+.sign-btn {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background-color: #e50815;
+  color: white;
+  width: 100%;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.sign-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.register-text {
+  color: #737373;
+}
+
+.sign-up-text {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.sign-up-text:hover {
+  text-decoration: underline;
+}
+.log-in {
+  margin-left: 10px;
+}
+
+.message-status {
+  color: red;
+}
+
+.sign-btn {
+}

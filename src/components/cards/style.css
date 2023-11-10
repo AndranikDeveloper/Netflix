@@ -1,0 +1,32 @@
+.swiper-wrapper {
+  display: flex;
+  column-gap: 1px;
+}
+.cards-content {
+}
+
+.movie-block {
+  width: 200px;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+
+.category-name {
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+.cards {
+  padding: 60px;
+  color: white;
+}
+
+.movie-image {
+  width: fit-content;
+  height: 220px;
+}

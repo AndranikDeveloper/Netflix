@@ -1,0 +1,21 @@
+.movies-list {
+  background-color: #181818;
+  height: 100vh;
+}
+
+.movies-list-container {
+  display: grid;
+  grid-template-columns: repeat(5, 15%);
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.movies-list-image {
+  width: 200px;
+  height: 210px;
+}
+
+.movies-list-image {
+  cursor: pointer;
+}

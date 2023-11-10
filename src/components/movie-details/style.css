@@ -1,0 +1,39 @@
+.movie-details {
+  background-color: #181818;
+  height: 100vh;
+  margin-top: -70px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.movie-details-container {
+  width: 1362px;
+  display: flex;
+}
+.movie-details-content {
+  max-width: 1600px;
+  margin: 0 auto;
+  color: white;
+}
+.more-details {
+  display: grid;
+  justify-content: start;
+  padding-top: 60px;
+  grid-template-columns: repeat(4, 23%);
+  color: white;
+  gap: 100px;
+}
+
+.more-details a {
+  text-decoration: none;
+  color: white;
+}
+
+.more-details h5 {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.more-details a:hover {
+  text-decoration: underline;
+}

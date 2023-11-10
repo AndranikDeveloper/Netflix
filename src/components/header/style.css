@@ -1,0 +1,134 @@
+.header {
+  background-color: black;
+  padding: 5px 50px;
+  color: white;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-image {
+  width: 120px;
+  height: 110px;
+}
+
+.header-btn {
+  background-color: #e00712;
+  color: white;
+  padding: 9px 20px;
+  border-radius: 7px;
+  border: transparent;
+  min-width: 112px;
+  min-height: 33px;
+  cursor: pointer;
+}
+
+.header-log-in-btn {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  min-width: 80px;
+  transition: all 0.7s ease-in-out;
+  cursor: pointer;
+  color: white;
+}
+
+.header-log-in-btn:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.header-account {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  column-gap: 10px;
+}
+
+.header-icon {
+  cursor: pointer;
+}
+
+.header-burger {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.header-burger:hover {
+  color: gray;
+}
+.sidebar-block {
+  position: relative;
+  transition: 0.7s;
+}
+
+.sidebar {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  width: 450px;
+  top: -2px;
+  z-index: 2;
+  right: -50px;
+  background-color: rgb(80, 79, 79);
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  transform: translateX(450px);
+  transition: 1s;
+}
+
+.isOpen {
+  transform: translateX(0);
+}
+
+.close-btn {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.btn-close {
+  width: 20px;
+  height: 20px;
+}
+.sidebar-ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 30px;
+  font-size: 19px;
+}
+.sidebar-ul li {
+  display: block;
+  transition: 0.6s;
+  cursor: pointer;
+  border-top: 1px solid;
+  width: 100px;
+}
+.sidebar-ul li:hover {
+  padding-right: 10px;
+}
+.sidebar-text {
+  margin-top: 20px;
+  font-size: 30px;
+}
+.sidebar-background {
+  background-color: black;
+}
