@@ -1,9 +1,14 @@
 import React from 'react';
 import { useAppSelector } from '../../hooks/hooks';
 import { FilteredMoviesProps } from '../../types/filtered-movies-types';
-import './style.css';
 import { navigateToMovie } from './main-servies';
 import { useNavigate } from 'react-router-dom';
+import {
+  FilteredTag,
+  FoundMovieTag,
+} from '../styled-components/main-styles/filtered-movies-styles/filtered-styles';
+import { MovieImageTag } from '../styled-components/cards-styles/cards-style';
+import { FoundMovieNameTag } from '../styled-components/main-styles/main-styles';
 
 const FilteredMovies = ({ debounceValue }: FilteredMoviesProps) => {
   const { movies } = useAppSelector((state) => state.moviesReducer);
@@ -12,23 +17,25 @@ const FilteredMovies = ({ debounceValue }: FilteredMoviesProps) => {
     movie.title.toLocaleLowerCase().includes(debounceValue)
   );
   return (
-    <div className='filtered'>
+    <FilteredTag className='filtered'>
       {filteredMovies.map((movie) => (
-        <div
+        <FoundMovieTag
           key={movie.id}
           className='found-movie'
           id='found-movie'
           onClick={() => navigateToMovie(movie.id, navigate)}
         >
-          <img
+          <MovieImageTag
             src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
             alt={movie.original_title}
             className='movie-image'
           />
-          <div className='found-movie-name'>{movie.title}</div>
-        </div>
+          <FoundMovieNameTag className='found-movie-name'>
+            {movie.title}
+          </FoundMovieNameTag>
+        </FoundMovieTag>
       ))}
-    </div>
+    </FilteredTag>
   );
 };
 

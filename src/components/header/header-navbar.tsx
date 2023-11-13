@@ -1,45 +1,48 @@
 import { toggleLogin } from './header-services';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/hooks';
-import './style.css';
 import Sidebar from './sidebar';
 import Search from '../search/search';
+import {
+  HeaderAccountTag,
+  HeaderBtnTag,
+  HeaderJoinTag,
+  HeaderLogInBtnTag,
+  HeaderLogInTag,
+  HeaderNavbarTag,
+  HeaderSearchTag,
+  HeaderTextTag,
+} from '../styled-components/header-styles/header-navbar-styles/header-styles';
 
 const HeaderNavbar = () => {
   const navigate = useNavigate();
   const { currentUser } = useAppSelector((state) => state.authReducer);
 
   return (
-    <div className='header-navbar'>
+    <HeaderNavbarTag>
       {!currentUser ? (
-        <div className='header-account'>
-          <span className='header-text'>UNLIMITED TV SHOWS & MOVIES</span>
-          <span className='header-join'>
-            <button
-              onClick={() => toggleLogin(navigate)}
-              className='header-join-btn header-btn'
-            >
+        <HeaderAccountTag>
+          <HeaderTextTag>UNLIMITED TV SHOWS & MOVIES</HeaderTextTag>
+          <HeaderJoinTag>
+            <HeaderBtnTag onClick={() => toggleLogin(navigate)}>
               JOIN NOW
-            </button>
-          </span>
-          <span className='header-log-in'>
-            <button
-              onClick={() => toggleLogin(navigate)}
-              className='header-log-in-btn'
-            >
+            </HeaderBtnTag>
+          </HeaderJoinTag>
+          <HeaderLogInTag>
+            <HeaderLogInBtnTag onClick={() => toggleLogin(navigate)}>
               Log In
-            </button>
-          </span>
-        </div>
+            </HeaderLogInBtnTag>
+          </HeaderLogInTag>
+        </HeaderAccountTag>
       ) : (
-        <div className='header-account'>
-          <div className='header-search'>
+        <HeaderAccountTag>
+          <HeaderSearchTag>
             <Search />
-          </div>
+          </HeaderSearchTag>
           <Sidebar />
-        </div>
+        </HeaderAccountTag>
       )}
-    </div>
+    </HeaderNavbarTag>
   );
 };
 

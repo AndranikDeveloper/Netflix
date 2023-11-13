@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AuthInitialState } from '../types/store-types';
+import { priceOfMovie } from '../components/movie-video/movie-video-services';
 
-const initialState: AuthInitialState = {
+export const initialState: AuthInitialState = {
   users: [],
   currentUser: null,
 };
@@ -20,13 +21,24 @@ const authSlice = createSlice({
     setCurrentUser(state, action) {
       state.currentUser = action.payload;
     },
-    changeAmount(state, action) {
+    buyMovie(state, action) {
       if (state.currentUser) {
         state.currentUser.amount -= action.payload;
+      }
+    },
+    sellMovieAmount(state, action) {
+      if (state.currentUser) {
+        state.currentUser.amount += priceOfMovie;
       }
     },
   },
 });
 
 export default authSlice.reducer;
-export const { logInUser, setCurrentUser, logOutUser } = authSlice.actions;
+export const {
+  logInUser,
+  setCurrentUser,
+  logOutUser,
+  buyMovie,
+  sellMovieAmount,
+} = authSlice.actions;

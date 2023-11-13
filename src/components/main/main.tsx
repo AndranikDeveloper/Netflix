@@ -1,12 +1,18 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect } from 'react';
 import { AppDispatch } from '../../store/store';
 import { useDispatch } from 'react-redux';
 import { categoryName } from '../../services';
 import Cards from '../cards/cards';
 import { callRequests } from './main-servies';
-import './style.css';
 import FilteredMovies from './filtered-movies';
 import { useData } from '../../hooks/main-component-hooks';
+import {
+  FilteredMoviesTag,
+  MainContainerTag,
+  MainMoviesTextTag,
+  MainTag,
+  MainTextTag,
+} from '../styled-components/main-styles/main-styles';
 
 const Main = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -25,22 +31,22 @@ const Main = () => {
   }, [dispatch]);
 
   return (
-    <main className='main'>
-      <div className='main-container'>
-        <div className='main-text'>
+    <MainTag className='main'>
+      <MainContainerTag>
+        <MainTextTag className='main-text'>
           <h1>Movies</h1>
-          <div className='main-movies-text'>
+          <MainMoviesTextTag>
             Movies move us like nothing else can, whether they’re scary, funny,{' '}
             <br />
             dramatic, romantic or anywhere in-between. So many titles, so much{' '}
             <br />
             to experience.
-          </div>
-        </div>
+          </MainMoviesTextTag>
+        </MainTextTag>
         {debounceValue.length > 0 ? (
-          <div className='filtered-movies'>
+          <FilteredMoviesTag>
             <FilteredMovies debounceValue={debounceValue} />
-          </div>
+          </FilteredMoviesTag>
         ) : (
           <>
             <Cards movieList={popularMovies} category={categoryName.popular} />
@@ -57,8 +63,8 @@ const Main = () => {
             <Cards movieList={fantasyMovies} category={categoryName.fantasy} />
           </>
         )}
-      </div>
-    </main>
+      </MainContainerTag>
+    </MainTag>
   );
 };
 

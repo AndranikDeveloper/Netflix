@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios, { AxiosError } from 'axios';
-import { Movie, SingleMovie } from '../types/store-types';
+import { Movie, MovieVideoResponse, SingleMovie } from '../types/store-types';
 import { AppDispatch, RootState } from './store';
 
 const url = ``;
@@ -125,3 +125,14 @@ export const getMovie = createAsyncThunk<
   const response = await axios.get(`${url}`);
   return response.data;
 });
+
+export const getMovieVideo = createAsyncThunk<
+  { key: string }[],
+  string,
+  { dispatch: AppDispatch; geState: RootState }
+>('getMovieVideo/api', async (url, thunkApi) => {
+  const response = await axios.get(`${url}`);
+  return response.data.results;
+});
+
+export const changeTheAmount = createAsyncThunk('changeAmount', async () => {});

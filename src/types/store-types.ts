@@ -50,6 +50,7 @@ export type MovieSlice = {
   movie: Partial<SingleMovie>;
   error: string;
   isLoading: boolean;
+  results: { key: string }[];
 };
 
 export type UserInfo = {
@@ -69,4 +70,8 @@ export type CurrentUser = {
 export type AuthInitialState = {
   users: UserInfo[];
   currentUser: CurrentUser | null;
+};
+
+export type MovieVideoResponse = {
+  results: { key: string }[];
 };

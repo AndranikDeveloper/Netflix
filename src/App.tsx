@@ -9,6 +9,7 @@ import {
   handleSubmitSignIn,
 } from './components/authentication/auth-services';
 import { useAppSelector } from './hooks/hooks';
+import MyFilms from './components/my-films/my-films';
 
 function App() {
   const { users } = useAppSelector((state) => state.authReducer);
@@ -39,6 +40,7 @@ function App() {
             />
           }
         />
+        <Route path='/my-films' element={<MyFilms />} />
       </Routes>
     </div>
   );

@@ -1,26 +1,31 @@
-import './style.css';
 import netflixIcon from '../../assets/netflix.png';
 import { useNavigate } from 'react-router-dom';
 import HeaderNavbar from './header-navbar';
+import {
+  HeaderContentTag,
+  HeaderIconTag,
+  HeaderImageTag,
+  HeaderTag,
+} from '../styled-components/header-styles/header-styles';
 
 const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <header className='header'>
+    <HeaderTag>
       <div className='header-container'>
-        <div className='header-content'>
-          <div className='header-icon' onClick={() => navigate('/')}>
-            <img
+        <HeaderContentTag>
+          <HeaderIconTag onClick={() => navigate('/')}>
+            <HeaderImageTag
               className='header-image'
               src={netflixIcon}
               alt='Netflix Icon'
             />
-          </div>
+          </HeaderIconTag>
           <HeaderNavbar />
-        </div>
+        </HeaderContentTag>
       </div>
-    </header>
+    </HeaderTag>
   );
 };
 

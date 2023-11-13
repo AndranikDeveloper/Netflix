@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Movies = () => {
+const Balance = () => {
   return <div></div>;
 };
 
-export default Movies;
+export default Balance;

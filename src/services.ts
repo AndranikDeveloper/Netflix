@@ -23,3 +23,7 @@ export const categoryName = {
   fantasy: 'The Fantasy',
   comedy: 'The Comedy',
 };
+
+export const imagesUrl = 'https://image.tmdb.org/t/p/original';
+export const netflixBackgroundImage =
+  'https://assets.nflxext.com/ffe/siteui/vlv3/77d35039-751f-4c3e-9c8d-1240c1ca6188/aa54f3b9-74ff-46be-8364-511992a03cfb/AM-en-20231106-popsignuptwoweeks-perspective_alpha_website_large.jpg';

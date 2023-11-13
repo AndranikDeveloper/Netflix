@@ -26,7 +26,7 @@ export const initialState: InitialStateTypes = {
 
 const moviesReducer = createSlice({
   name: 'moviesReducer',
-  initialState,
+  initialState: { ...initialState },
   reducers: {
     addToCart: (state, action) => {
       state.cartMovies = [...state.cartMovies, action.payload];
@@ -47,11 +47,9 @@ const moviesReducer = createSlice({
     builder
       .addCase(popularMoviesApi.fulfilled, (state, action) => {
         state.popularMovies = action.payload;
-        const existingMovieIds = new Set(
-          state.movies.map((movie) => movie.overview)
-        );
+        const existMovie = new Set(state.movies.map((movie) => movie.overview));
         const newMovies = state.popularMovies.filter(
-          (movie) => !existingMovieIds.has(movie.overview)
+          (movie) => !existMovie.has(movie.overview)
         );
         state.movies = [...state.movies, ...newMovies];
         state.error = '';
@@ -79,11 +77,9 @@ const moviesReducer = createSlice({
       })
       .addCase(topRatedMoviesApi.fulfilled, (state, action) => {
         state.topRatedMovies = action.payload;
-        const existingMovieIds = new Set(
-          state.movies.map((movie) => movie.overview)
-        );
+        const existMovie = new Set(state.movies.map((movie) => movie.overview));
         const newMovies = state.topRatedMovies.filter(
-          (movie) => !existingMovieIds.has(movie.overview)
+          (movie) => !existMovie.has(movie.overview)
         );
         state.movies = [...state.movies, ...newMovies];
         state.error = '';
@@ -108,11 +104,9 @@ const moviesReducer = createSlice({
       })
       .addCase(upComingMoviesApi.fulfilled, (state, action) => {
         state.upComingMovies = action.payload;
-        const existingMovieIds = new Set(
-          state.movies.map((movie) => movie.overview)
-        );
+        const existMovie = new Set(state.movies.map((movie) => movie.overview));
         const newMovies = state.upComingMovies.filter(
-          (movie) => !existingMovieIds.has(movie.overview)
+          (movie) => !existMovie.has(movie.overview)
         );
         state.movies = [...state.movies, ...newMovies];
       })
