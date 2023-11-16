@@ -18,7 +18,6 @@ const VideoModal = ({ id, setIsModal }: ModalVideoProps) => {
   const movieVideoApi = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}`;
   const dispatch = useDispatch<AppDispatch>();
   const videoKey = useAppSelector((state) => state.singleMovieReducer.results);
-
   useEffect(() => {
     dispatch(getMovieVideo(movieVideoApi));
   }, [dispatch, id, movieVideoApi]);
@@ -27,7 +26,7 @@ const VideoModal = ({ id, setIsModal }: ModalVideoProps) => {
     <StylesVideoModal>
       <StylesVideoModalBackground onClick={() => toggleModal(setIsModal)}>
         <StylesVideoModalContent>
-          <StylesVideo controls={true} url={`${url}${videoKey[0].key}`} />
+          <StylesVideo controls={true} url={`${url}${videoKey[0]?.key}`} />
         </StylesVideoModalContent>
       </StylesVideoModalBackground>
     </StylesVideoModal>

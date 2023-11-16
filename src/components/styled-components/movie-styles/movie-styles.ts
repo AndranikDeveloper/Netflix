@@ -34,7 +34,7 @@ export const MovieInfoContentTag = styled.div`
   max-width: 500px;
   position: absolute;
   left: 2%;
-  top: 45%;
+  top: 20%;
   display: flex;
   flex-direction: column;
   row-gap: 10px;

@@ -15,11 +15,20 @@ export const priceOfMovie = 5;
 export function addToMyFilms(
   movie: Partial<SingleMovie>,
   dispatch: AppDispatch,
-  currentUser: CurrentUser | null
+  currentUser: CurrentUser | null,
+  movieName: string | undefined
 ) {
   if (currentUser && currentUser.amount > priceOfMovie) {
     dispatch(addToCart(movie));
-    dispatch(buyMovie(priceOfMovie));
+    dispatch(
+      buyMovie({
+        price: priceOfMovie,
+        id: Date.now(),
+        date: Date.now(),
+        type: 'bought',
+        name: movieName,
+      })
+    );
   } else if (currentUser && currentUser.amount < priceOfMovie) {
     alert("You Don't have Enough Money for this");
   }

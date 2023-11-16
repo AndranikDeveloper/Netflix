@@ -1,11 +1,18 @@
 import React from 'react';
-import { StylesBalance } from '../styled-components/balance-styles/balance-styles';
-import { useAppSelector } from '../../hooks/hooks';
+import {
+  StylesBalance,
+  StylesBalanceContainer,
+} from '../styled-components/balance-styles/balance-styles';
+import BalanceContent from './balance-content/balance-content';
 
 const Balance = () => {
-  const currentUser = useAppSelector((state) => state.authReducer.currentUser);
-
-  return <StylesBalance></StylesBalance>;
+  return (
+    <StylesBalance>
+      <StylesBalanceContainer>
+        <BalanceContent />
+      </StylesBalanceContainer>
+    </StylesBalance>
+  );
 };
 
 export default Balance;

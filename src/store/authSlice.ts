@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AuthInitialState } from '../types/store-types';
-import { priceOfMovie } from '../components/movie-video/movie-video-services';
 
 export const initialState: AuthInitialState = {
   users: [],
   currentUser: null,
+  history: [],
 };
 
 const authSlice = createSlice({
@@ -23,13 +23,15 @@ const authSlice = createSlice({
     },
     buyMovie(state, action) {
       if (state.currentUser) {
-        state.currentUser.amount -= action.payload;
+        state.currentUser.amount -= action.payload.price;
       }
+      state.history = [...state.history, action.payload];
     },
     sellMovieAmount(state, action) {
       if (state.currentUser) {
-        state.currentUser.amount += priceOfMovie;
+        state.currentUser.amount += action.payload.price;
       }
+      state.history = [...state.history, action.payload];
     },
   },
 });

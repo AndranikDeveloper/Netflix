@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FilteredTag = styled.div`
   display: grid;
-  grid-template-columns: repeat(7, 230px);
+  grid-template-columns: repeat(5, 230px);
   color: white;
   justify-content: center;
   align-items: center;

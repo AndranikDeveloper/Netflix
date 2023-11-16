@@ -1,31 +1,12 @@
-import { Component, ErrorInfo, ReactNode } from 'react';
 import './App.css';
+import ErrorBoundary from './components/boundary/boundary';
 import Routing from './components/routing/routing';
-import { ErrorBoundaryProps, ErrorBoundaryState } from './types/app-types';
 
-class App extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  constructor(props: ErrorBoundaryProps) {
-    super(props);
-    this.state = {
-      hasError: false,
-      error: null,
-      errorInfo: null,
-    };
-  }
-  static getDerivedStateFromError(error: Error, errorInfo: ErrorInfo) {
-    return {
-      hasError: true,
-      error: Error,
-      errorInfo,
-    };
-  }
-
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.log(errorInfo);
-  }
-  render(): ReactNode {
-    return <Routing />;
-  }
+function App() {
+  return (
+    <ErrorBoundary>
+      <Routing />
+    </ErrorBoundary>
+  );
 }
-
 export default App;

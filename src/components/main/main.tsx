@@ -43,7 +43,7 @@ const Main = () => {
             to experience.
           </MainMoviesTextTag>
         </MainTextTag>
-        {debounceValue.length > 0 ? (
+        {debounceValue?.length > 0 ? (
           <FilteredMoviesTag>
             <FilteredMovies debounceValue={debounceValue} />
           </FilteredMoviesTag>

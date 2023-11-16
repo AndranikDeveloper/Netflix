@@ -1,4 +1,2 @@
-1. styled-component
-2. componentnery sarqel container   
-3. custom hook for createAsyncThunk
-4. error boundary
+1. componentnery sarqel container   
+2. custom hook for createAsyncThunk

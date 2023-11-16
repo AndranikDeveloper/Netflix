@@ -17,6 +17,7 @@ import {
   StylesMovieMainUserAmount,
 } from '../styled-components/movie-styles/movie-styles';
 import MovieVideo from '../movie-video/movie-video';
+import Header from '../header/header';
 
 const Movie = () => {
   const { id } = useParams();
@@ -35,6 +36,7 @@ const Movie = () => {
 
   return (
     <MovieMainBlockTag>
+      <Header />
       <StylesMovieMainUserAmount>
         {currentUser?.amount} $
       </StylesMovieMainUserAmount>

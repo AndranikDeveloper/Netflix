@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   StylesAccountAmount,
-  StylesAccountAmountWrapper,
   StylesMyFilm,
   StylesMyFilmImage,
   StylesMyFilmSellButton,
@@ -13,6 +12,7 @@ import { useAppSelector } from '../../hooks/hooks';
 import { imagesUrl } from '../../services';
 import { sellMovie } from './my-films-services';
 import { useDispatch } from 'react-redux';
+import Header from '../header/header';
 
 const MyFilms = () => {
   const cartMovies = useAppSelector((state) => state.moviesReducer.cartMovies);
@@ -22,6 +22,7 @@ const MyFilms = () => {
   const dispatch = useDispatch();
   return (
     <StylesMyFilms>
+      <Header />
       <StylesAccountAmount>{currentUserAmount?.amount} $</StylesAccountAmount>
       <StylesMyFilmsContainer>
         {cartMovies.map((movie) => (
@@ -30,7 +31,7 @@ const MyFilms = () => {
             <StylesMyFilmsTitle>
               {movie.title}
               <StylesMyFilmSellButton
-                onClick={() => sellMovie(movie.id, dispatch)}
+                onClick={() => sellMovie(movie.id, dispatch, movie.title)}
               >
                 Sell
               </StylesMyFilmSellButton>

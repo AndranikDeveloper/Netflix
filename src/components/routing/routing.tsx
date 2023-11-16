@@ -1,7 +1,5 @@
 import React from 'react';
-import Header from '../header/header';
 import { Route, Routes } from 'react-router-dom';
-import Main from '../main/main';
 import Movie from '../movie/movie';
 import Authentication from '../authentication/authentication';
 import {
@@ -10,13 +8,14 @@ import {
 } from '../authentication/auth-services';
 import MyFilms from '../my-films/my-films';
 import Balance from '../balance/balance';
+import FirstPage from '../first-page/first-page';
+import { StylesRouting } from '../styled-components/routing-styles/rounting-balance-styles';
 
 const Routing = () => {
   return (
-    <div>
-      <Header />
+    <StylesRouting>
       <Routes>
-        <Route path='/' element={<Main />} />
+        <Route path='/' element={<FirstPage />} />
         <Route path='/movie/:id' element={<Movie />} />
         <Route
           path='/auth'
@@ -41,7 +40,7 @@ const Routing = () => {
         <Route path='/my-films' element={<MyFilms />} />
         <Route path='/balance' element={<Balance />} />
       </Routes>
-    </div>
+    </StylesRouting>
   );
 };
 

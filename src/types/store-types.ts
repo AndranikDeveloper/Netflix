@@ -70,6 +70,7 @@ export type CurrentUser = {
 export type AuthInitialState = {
   users: UserInfo[];
   currentUser: CurrentUser | null;
+  history: { name: string; date: number; type: string; id: number }[];
 };
 
 export type MovieVideoResponse = {

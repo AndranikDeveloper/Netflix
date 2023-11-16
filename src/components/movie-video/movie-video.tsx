@@ -47,7 +47,9 @@ const MovieVideo = ({ id, movie }: MovieVideoProps) => {
               ''
             ) : (
               <StylesMovieVideoPriceButton
-                onClick={() => addToMyFilms(movie, dispatch, currentUser)}
+                onClick={() =>
+                  addToMyFilms(movie, dispatch, currentUser, movie.title)
+                }
               >
                 Add To My Films
               </StylesMovieVideoPriceButton>

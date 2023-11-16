@@ -36,6 +36,4 @@ export const StylesVideoModalContent = styled.div`
   min-width: 500px;
   color: black;
 `;
-export const StylesVideo = styled(ReactPlayer)`
-  /* width: 100%; */
-`;
+export const StylesVideo = styled(ReactPlayer)``;

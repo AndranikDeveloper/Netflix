@@ -132,7 +132,6 @@ export const getMovieVideo = createAsyncThunk<
   { dispatch: AppDispatch; geState: RootState }
 >('getMovieVideo/api', async (url, thunkApi) => {
   const response = await axios.get(`${url}`);
+  debugger;
   return response.data.results;
 });
-
-export const changeTheAmount = createAsyncThunk('changeAmount', async () => {});

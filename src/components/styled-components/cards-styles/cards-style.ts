@@ -8,7 +8,7 @@ export const CardsContainerTag = styled.div``;
 export const CardsContentTag = styled.div``;
 
 export const CategoryNameTag = styled.div`
-  margin-left: 15px;
+  margin-left: 10px;
   margin-bottom: 20px;
 `;
 
