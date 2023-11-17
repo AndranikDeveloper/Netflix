@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
   StylesBalanceBlockTable,
   StylesBalanceTableBought,
@@ -17,9 +16,13 @@ const BalanceTable = ({
   setActiveBought,
   setActiveSold,
 }: BalanceTableProps) => {
-  const history = useAppSelector((state) => state.authReducer.history);
-  const boughtHistory = history.filter((movie) => movie.type === 'bought');
-  const soldHistory = history.filter((movie) => movie.type === 'sold');
+  const currentUser = useAppSelector((state) => state.authReducer.currentUser);
+  const boughtHistory = currentUser?.transaction?.filter(
+    (movie) => movie.type === 'bought'
+  );
+  const soldHistory = currentUser?.transaction?.filter(
+    (movie) => movie.type === 'sold'
+  );
 
   return (
     <StylesBalanceBlockTable>

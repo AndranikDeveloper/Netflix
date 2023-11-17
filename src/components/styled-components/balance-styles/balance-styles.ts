@@ -24,6 +24,11 @@ export const StylesBalanceUser = styled.div`
   align-items: center;
   text-align: center;
 `;
+export const StylesBalanceUserAmount = styled.div`
+  font-size: 30px;
+  font-weight: 800;
+  margin-left: 40px;
+`;
 export const StylesBalanceUserIcon = styled(BiUserCircle)`
   width: 25px;
   height: 25px;
@@ -47,7 +52,18 @@ export const StylesBalanceBlock = styled.div`
   color: white;
   padding-top: 10%;
 `;
+export const StylesBalanceHeaderBlock = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+`;
 export const StylesBalanceBlockH1 = styled.h1``;
+export const StylesBalanceQuizButton = styled.h1`
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 export const StylesBalanceBlockTable = styled.div`
   min-height: 600px;
   border: 1px solid gray;

@@ -28,7 +28,7 @@ const Cards = ({ movieList, category }: CardsType) => {
             <h4>{category?.toUpperCase()} Movies</h4>
           </CategoryNameTag>
           <Swiper
-            slidesPerView={7}
+            slidesPerView={9}
             modules={[Navigation, A11y, Pagination, Scrollbar]}
             navigation
           >

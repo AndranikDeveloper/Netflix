@@ -65,12 +65,31 @@ export type CurrentUser = {
   email: string;
   password: string;
   amount: number;
+  transaction: { name: string; date: number; type: string; id: number }[];
 };
 
 export type AuthInitialState = {
   users: UserInfo[];
   currentUser: CurrentUser | null;
-  history: { name: string; date: number; type: string; id: number }[];
+  quizItems: QuizItems[];
+  randomObject: null | RandomObjectType;
+  guessedCount: number;
+  randomItems: { id: number; title: string }[];
+  attemptCount: number;
+};
+
+export type RandomObjectType = {
+  id: number;
+  title: string;
+  poster_path: string;
+  overview: string;
+};
+
+export type QuizItems = {
+  id: number;
+  movieNames: string;
+  correctMovieName: string;
+  movieImage: string;
 };
 
 export type MovieVideoResponse = {

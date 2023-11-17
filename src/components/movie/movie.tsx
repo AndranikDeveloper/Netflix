@@ -38,7 +38,7 @@ const Movie = () => {
     <MovieMainBlockTag>
       <Header />
       <StylesMovieMainUserAmount>
-        {currentUser?.amount} $
+        {currentUser && `${currentUser?.amount} $`}
       </StylesMovieMainUserAmount>
       <MovieInfoTag className='movie-info'>
         <MovieInfoContainerTag imageUrl={imageUrl}>
